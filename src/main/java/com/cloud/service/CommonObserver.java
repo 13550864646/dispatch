@@ -1,5 +1,7 @@
 package com.cloud.service;
 
+import java.util.HashMap;
+
 public class CommonObserver extends AbstractObserver {
     private String sendFlag = null;
     private String sendPath = null;
@@ -14,6 +16,6 @@ public class CommonObserver extends AbstractObserver {
 
     @Override
     public void update(Subject subject) {
-        commonUpdate(subject, appType sendFlag sendPath threadMap);
+        commonUpdate(subject, appType, sendFlag, sendPath, threadMap);
     }
 }

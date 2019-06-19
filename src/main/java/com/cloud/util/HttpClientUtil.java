@@ -1,6 +1,5 @@
 package com.cloud.util;
 
-import com.sun.xml.internal.ws.api.pipe.TransportTubeFactory;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.PostMethod;
@@ -13,7 +12,7 @@ import java.util.Arrays;
  *  http 客户端
  */
 public class HttpClientUtil {
-    private static org.apache.log4j.Logger log = Logger.getLogger(C3P0Util.class);
+    private static Logger log = Logger.getLogger(C3P0Util.class);
     public static boolean sendHttpData(String className, String url, NameValuePair[] parameter) {
         HttpClient client = new HttpClient();
         PostMethod post = new PostMethod(url);

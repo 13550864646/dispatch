@@ -1,5 +1,7 @@
 package com.cloud.service;
 
+import com.cloud.util.AppinfoContext;
+
 public class SubjectFactory {
     public static Subject getSubject(String appTypes, String dataType) {
         DataSaveSubject subject = new DataSaveSubject();

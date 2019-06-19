@@ -3,6 +3,8 @@ package com.cloud.service;
 import com.cloud.util.PropertiesReader;
 import com.cloud.util.ThreadStateFlag;
 
+import java.util.HashMap;
+
 public abstract class AbstractObserver implements Observer {
     protected void commonUpdate(Subject subject, String appType, String sendFlag, String
             sendPath, HashMap<String, CommonThread> threadMap) {

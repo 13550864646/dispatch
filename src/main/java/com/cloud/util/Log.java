@@ -1,10 +1,12 @@
 package com.cloud.util;
 
+import org.apache.log4j.Logger;
+
 public class Log {
     static Logger logger = null;
 
     static {
-        logger = org.apache.log4j.Logger.getLogger(Log.class);
+        logger = Logger.getLogger(Log.class);
     }
 
     /**

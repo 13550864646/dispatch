@@ -1,6 +1,7 @@
 package com.cloud.controller;
 
 import com.cloud.bean.Message;
+import com.cloud.service.SubjectFactory;
 import com.cloud.util.Log;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;

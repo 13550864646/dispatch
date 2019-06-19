@@ -1,6 +1,9 @@
 package com.cloud.strategy;
 
 import com.cloud.util.Log;
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.httpclient.params.HttpMethodParams;
 
 public class PostStrategy implements SendStrategy {
     @Override
@@ -12,7 +15,7 @@ public class PostStrategy implements SendStrategy {
             System.out.println(url);
             post.getParams().setParameter(HttpMethodParams.HTTP_CONTENT_CHARSET, "UTF- 8 ");
             post.addParameter("data", data);
-            Log.debug(this.getClass()getSimpleName() + "begin send data ...");
+            Log.debug(this.getClass().getSimpleName() + "begin send data ...");
             Log.debug(this.getClass().getSimpleName() + " send data :" + data);
 //            设置连接超时时间
             client.getHttpConnectionManager().getParams().setConnectionTimeout(10000);

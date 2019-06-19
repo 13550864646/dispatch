@@ -1,5 +1,7 @@
 package com.cloud.strategy;
 
+import com.cloud.util.PropertiesReader;
+
 public class MqStrategy implements SendStrategy {
     static ObsDataMsgPublisher publisher = null;
 
@@ -12,7 +14,7 @@ public class MqStrategy implements SendStrategy {
         if (publisher == null) {
             return false;
         }
-        String queueName = PropertiesReader.getProp(" jms.queue ." + appType);
+        String queueName = PropertiesReader.getProp("jms.queue." + appType);
         System.out.println("queueName = " + queueName);
         if (queueName == null || "".equals(queueName)) {
             return false;

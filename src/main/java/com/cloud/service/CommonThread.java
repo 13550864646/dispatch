@@ -1,9 +1,11 @@
 package com.cloud.service;
 
+import com.cloud.strategy.StrategyContext;
 import com.cloud.util.C3P0Util;
 import com.cloud.util.Log;
 import com.cloud.util.PropertiesReader;
 import com.cloud.util.ThreadStateFlag;
+import net.sf.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.List;
@@ -43,15 +45,15 @@ public class CommonThread extends Thread {
             if (unSendList.size() > 0) {
                 for (HashMap<String, String> map : unSendList) {
                     data = new JSONObject();
-                    data.put(" a pp Type ", appType);
-                    data.put(" data Type ", map.get("dataType "));
-                    data.put(" collectDate ", map.get("receiveTime "));
-                    data.put(" phone ", map.get(" phone "));
-                    data.put(" dataValue ", map.get("data Value "));
-                    data.put("device ID", map.get("device I D"));
-                    data.put(" company", map.get(" company "));
-                    data.put(" pname ", map.get(" pname "));
-                    data.put(" teamName ", map.get(" teamName "));
+                    data.put("appType", appType);
+                    data.put("dataType", map.get("dataType"));
+                    data.put("collectDate", map.get("receiveTime"));
+                    data.put("phone", map.get("phone"));
+                    data.put("dataValue", map.get("dataValue"));
+                    data.put("deviceID", map.get("deviceID"));
+                    data.put("company", map.get("company"));
+                    data.put("pname", map.get("pname"));
+                    data.put("teamName", map.get("teamName"));
 
                     if (StrategyContext.sendData(data.toString(), sendPath, appType, sendWay)) {
 //                        数据发送成功,进行发送标识的更新
@@ -64,7 +66,7 @@ public class CommonThread extends Thread {
                     }
                 }
             }
-            threadStateFlag.notify() ;
+            threadStateFlag.notify();
         }
     }
 }
